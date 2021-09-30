@@ -47,29 +47,36 @@ function findAvailablePosition (wordArr, rowsArr, colsArr){
     for (let l = 0; l < wordArr.length; l++) {
         const element = wordArr[l];
 
-        if(arr[rowsIndex][colsIndex] === " " || element){
+        if(arr[rowsIndex][colsIndex] === " " || arr[rowsIndex][colsIndex] === element){
+            console.log(arr[rowsIndex][colsIndex].localeCompare(element));
+            // console.log(arr[rowsIndex][colsIndex] === " " || arr[rowsIndex][colsIndex] === element);
+            // console.log(arr[rowsIndex][colsIndex]);
+            // console.log(element);
+            // console.log("a" === "x");
 
             arr[rowsIndex][colsIndex] = element;
             verticalORhorizontal ? rowsIndex++ : colsIndex++;
+            // return arr;
 
-        } else if(arr[rowsIndex][colsIndex] !== " " || element){
+        } else if(arr[rowsIndex][colsIndex] !== " " || arr[rowsIndex][colsIndex] !== element){
 
             // go back to initial position:
-            previousSelectedDirection = verticalORhorizontal ? rowsIndex : colsIndex;
+            let previousSelectedDirection = verticalORhorizontal ? rowsIndex : colsIndex;
             previousSelectedDirection = previousSelectedDirection - l;
 
             verticalORhorizontal = !verticalORhorizontal;
 
             arr[rowsIndex][colsIndex] = element;
             verticalORhorizontal ? rowsIndex++ : colsIndex++;
+            // return arr;
             
         } else{
             rowsArr = rowsArr.splice(rowsIndexInitial*1, 1);
             colsArr = colsArr.splice(colsIndexInitial*1, 1);
 
-            findAvailablePosition (wordArr, rowsArr, colsArr);
+            // findAvailablePosition (wordArr, rowsArr, colsArr);
         }
-        return arr;
+        
     }
 }
 

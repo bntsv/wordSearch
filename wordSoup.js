@@ -55,12 +55,6 @@ let puzzleParentDiv = document.querySelector(".puzzle");
 puzzleParentDiv.style.gridTemplateColumns = `repeat(${numCol + soupTitle.length}, 1fr)`;
 puzzleParentDiv.style.gridTemplateRows = `repeat(${numRow + 1}, 1fr)`;
 
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 console.log(soupTitle);
 
 function fillPuzzleDiv(arr) {
