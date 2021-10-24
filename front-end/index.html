@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Soup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
+    <style>
+        html, body{
+            min-height: 100vh;
+        }
+        body{
+            margin: 0;
+            box-sizing: border-box;
+            border: 15px solid rgb(255, 255, 255);
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .puzzle {
+            position: relative;
+            left: 25%;
+            top: 15%;
+
+            display: inline-grid;
+            grid-template-columns: repeat(25, 2em);
+            grid-template-rows: repeat(25, 2em);
+            grid-gap: 0.1em;
+
+            padding: 2px;
+            /* background-color: #bdffe5; */
+        }
+
+        .item {
+            text-align: center;
+            /* background-color: rgb(242, 255, 252); */
+        }
+
+        .right{
+            text-align: right;
+            font-size: 1em;
+            position: relative;
+            width: 8%;
+            left: 83%;
+            /* box-sizing: border-box; */
+            border: 1px solid rgb(255, 255, 255);
+            background-color: white;
+        }
+        .left{
+            text-align: left;
+            font-size: 1em;
+            position: relative;
+            width: 8%;
+            left: 1%;
+            /* box-sizing: border-box; */
+            border: 1px solid rgb(255, 255, 255);
+            background-color: white;
+        }
+
+        .solved{
+            color: rgb(230, 230, 230)
+        }
+
+        /* header{
+            border: 1px solid #000;
+        }
+        footer{
+            border: 1px solid #000;
+        } */
+        main{
+            /* border: 1px solid #000; */
+            height: 85vh;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <header>
+        <h1 class = "left" style="border-color: white;display: inline-block;" title="UX/UI not implemented yet - user should be able to chose title,size(rows,cols) and words to be filled in puzzle">Word Soup</h1>
+        <!-- <div class="userInput">
+            <label> Soup Title: <input type="text" class="soupTitle"></label>
+            <label> Soup Columns: <input type="text" class="soupCols"></label>
+            <label> Soup Rows: <input type="text" class="soupRows"></label>
+            <hr>
+        </div> -->
+        <button class = "right" title="UX/UI not implemented - refresh page instead to reload another soup">stir</button>
+        <!-- <hr> -->
+    </header>
+
+    <main>
+        <div class="puzzle" title="puzzle not interactive yet; directions of words so far implemented are: topToBottom, leftToRight, bottomToTop and rightToLeft; check console to follow puzzle formation and see skipped words(if any)"></div>
+        <!-- <hr> -->
+    </main>
+
+    <footer>
+        <button class = "left" title="UX/UI not implemented - this future button will show or hide hints AKA the ingredients AKA words to look for in the puzzle">smell</button>
+        <button class = "right eat" title="UX/UI not implemented - this future button will change CSS for letters of existing words in puzzle therefor solving the puzzle if a user gives up">eat</button>
+    </footer>
+
+    <script src="./src/wordSoup.js"></script>
+    <!-- <script src="./src/findAvailablePosition.js"></script> -->
+</body>
+
+</html>
